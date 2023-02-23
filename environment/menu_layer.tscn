@@ -1,0 +1,94 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/textures/message.png" type="Texture" id=1]
+[ext_resource path="res://environment/menu_layer.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/flappyfont.TTF" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 3 )
+
+[node name="menu_layer" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="Start_menu" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="start_msg" type="TextureRect" parent="Start_menu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -145.0
+margin_top = -299.0
+margin_right = 131.0
+margin_bottom = 101.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="game_over_menu" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="game_over_menu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 50.0
+margin_top = 230.0
+margin_right = 334.0
+margin_bottom = 443.0
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score_label" type="Label" parent="game_over_menu/VBoxContainer"]
+margin_right = 284.0
+margin_bottom = 49.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+custom_constants/shadow_as_outline = 1
+custom_fonts/font = SubResource( 1 )
+text = "SCORE : 0"
+
+[node name="high_score_label" type="Label" parent="game_over_menu/VBoxContainer"]
+margin_top = 64.0
+margin_right = 284.0
+margin_bottom = 113.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+custom_constants/shadow_as_outline = 1
+custom_fonts/font = SubResource( 1 )
+text = "BEST : 0"
+
+[node name="restart" type="Button" parent="game_over_menu/VBoxContainer"]
+margin_top = 128.0
+margin_right = 284.0
+margin_bottom = 203.0
+rect_min_size = Vector2( 0, 75 )
+custom_fonts/font = SubResource( 1 )
+text = "RESTART"
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="pressed" from="game_over_menu/VBoxContainer/restart" to="." method="_on_restart_pressed"]

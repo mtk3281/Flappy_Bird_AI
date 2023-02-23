@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/the_brightness_of_distant_stars-127581.mp3-83e4ebcde69887210c5c1a36ba9691ad.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/the_brightness_of_distant_stars-127581.mp3"
+dest_files=[ "res://.import/the_brightness_of_distant_stars-127581.mp3-83e4ebcde69887210c5c1a36ba9691ad.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
